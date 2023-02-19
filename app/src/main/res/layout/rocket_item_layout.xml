@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/marginMedium"
+    android:layout_marginVertical="@dimen/marginSmall"
+    android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+    app:cardCornerRadius="@dimen/marginLarge">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/marginMedium">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleRocketName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginMedium"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/rocket_name"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_bold"
+            app:layout_constraintBottom_toTopOf="@id/tvRocketName"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRocketName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginLarge"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_regular"
+            app:layout_constraintBottom_toTopOf="@id/titleRocketCountry"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleRocketName"
+            tools:text="Falcon 9" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleRocketCountry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginMedium"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:layout_marginEnd="@dimen/marginSmall"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/country"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_bold"
+            app:layout_constraintBottom_toTopOf="@id/tvRocketCountry"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRocketName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRocketCountry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginLarge"
+            android:layout_marginEnd="@dimen/marginSmall"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_regular"
+            app:layout_constraintBottom_toTopOf="@id/titleRocketEngineCount"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleRocketCountry"
+            tools:text="USA" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleRocketEngineCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginMedium"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/engine_count"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_bold"
+            app:layout_constraintBottom_toTopOf="@id/tvRocketEngineCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRocketCountry" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRocketEngineCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginLarge"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:layout_marginBottom="@dimen/marginMedium"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleRocketEngineCount"
+            tools:text="10" />
+
+        <ImageView
+            android:id="@+id/ivRocketFlickerImg"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/marginSmall"
+            android:layout_marginEnd="@dimen/marginMedium"
+            android:background="@drawable/rounded_corner"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvRocketCountry"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

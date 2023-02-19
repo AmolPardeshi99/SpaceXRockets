@@ -5,29 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dev.amol.spacexrockets.R
+import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
+import dev.amol.spacexrockets.databinding.FragmentRocketDetailBinding
+import dev.amol.spacexrockets.model.network.SpacexRocketDto
+import dev.amol.spacexrockets.viewmodel.RocketsViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RocketDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class RocketDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var sharedViewModel: RocketsViewModel
+    private lateinit var binding: FragmentRocketDetailBinding
+    private lateinit var flickerImagesAdapter: FlickerImagesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        sharedViewModel = ViewModelProvider(requireActivity())[RocketsViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -35,26 +29,60 @@ class RocketDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rocket_detail, container, false)
+        binding = FragmentRocketDetailBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RocketDetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RocketDetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        requireActivity().actionBar?.title = "Rocket Detail Screen"
+        setUpUI()
+        setObservers()
     }
+
+    private fun setUpUI() {
+        val data : SpacexRocketDto? = sharedViewModel.currentItemData
+        data?.let {
+            requireActivity().actionBar?.title = data.name
+            setUpRecycler(it)
+            setUpRocketText(it)
+            setUpLinkPreview(it)
+        }
+    }
+
+    private fun setUpLinkPreview(spacexRocketDto: SpacexRocketDto) {
+        binding.wikipediaLinkPreviewCard.apply {
+            Glide.with(ivLinkPreview).load(spacexRocketDto.wikipedia).into(ivLinkPreview)
+        }
+    }
+
+    private fun setUpRocketText(spacexRocketDto: SpacexRocketDto) {
+        binding.rocketDetailsCardLayout.apply {
+            tvActiveStatus.text = if(spacexRocketDto.active) "Active" else "Inactive"
+            tvCostPerLaunch.text = spacexRocketDto.costPerLaunch.toString()
+            tvSuccessRatePercent.text =  "${spacexRocketDto.successRatePct} %"
+            tvHeightDiameter.text = spacexRocketDto.height.toString()+"/ "+spacexRocketDto.diameter
+            tvDescription.text = spacexRocketDto.description
+        }
+    }
+
+    private fun setUpRecycler(spacexRocketDto: SpacexRocketDto) {
+        flickerImagesAdapter = FlickerImagesAdapter()
+        flickerImagesAdapter.updateUI(spacexRocketDto.flickrImages)
+        binding.rvFlickerImages.apply {
+            adapter = flickerImagesAdapter
+        }
+    }
+
+    private fun setObservers() {
+        sharedViewModel.getSpecificRocketData()
+        sharedViewModel.specificRocketData.observe(viewLifecycleOwner){
+            flickerImagesAdapter.updateUI(it.flickrImages)
+        }
+    }
+
+    private fun setUI(spacexRocketDto: SpacexRocketDto) {
+
+    }
+
 }

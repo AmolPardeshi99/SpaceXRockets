@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginStart="@dimen/marginMedium"
+    android:layout_marginTop="@dimen/marginSmall"
+    android:layout_marginEnd="@dimen/marginMedium"
+    android:layout_marginBottom="@dimen/marginSmall"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardCornerRadius="@dimen/marginSmall"
+    app:cardElevation="@dimen/marginSmall">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivLinkPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@color/colorSurfaceTranslucent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/linkName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginLarge"
+            android:layout_marginHorizontal="@dimen/marginSmall"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Wikipedia Link:" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginLarge"
+            android:layout_marginHorizontal="@dimen/marginSmall"
+            android:ellipsize="end"
+            android:letterSpacing="0.166666667"
+            android:maxLines="2"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginLarge"
+            android:layout_marginHorizontal="@dimen/marginSmall"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/lorem/random" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

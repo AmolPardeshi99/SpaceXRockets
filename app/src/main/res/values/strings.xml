@@ -2,4 +2,15 @@
     <string name="app_name">SpaceXRockets</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rocket_name">Rocket:</string>
+    <string name="country">Country:</string>
+    <string name="engine_count">Engine Count:</string>
+    <string name="spacex_rockets">SpaceX Rockets</string>
+    <string name="rocket_detail_screen">Rocket Detail Screen</string>
+    <string name="active_status">Active Status:</string>
+    <string name="cost_per_launch">Cost per launch</string>
+    <string name="success_rate_percent">Success Rate percent</string>
+    <string name="height_diameter">Height/Diameter:</string>
+    <string name="description">Description</string>
+    <string name="sample_description">The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.</string>
 </resources>
