@@ -57,9 +57,9 @@ This app uses [MVVM (Model View View-Model)](https://developer.android.com/jetpa
 
 * Click on “Clone or download” and copy the URL.
 
-* Use the git clone command along with the copied URL from earlier. $ git clone https://github.com/Kingbond470/Notify
+* Use the git clone command along with the copied URL from earlier. $ git clone https://github.com/AmolPardeshi99/SpaceXRockets.git
 
-* Press Enter. $ git clone https://github.com/Kingbond470/Notify
+* Press Enter. $ git clone https://github.com/AmolPardeshi99/SpaceXRockets.git
 
 Congratulations, you have created your local clone from your remote Github repository.
 
