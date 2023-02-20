@@ -68,27 +68,24 @@ Open Android Studio. Go to File > New > Project From Version Control. Copy the l
 
 # Let's See
  
- "https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/spacex_demo_amol_pardeshi.gif"
+ <img src="https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/spacex_demo_amol_pardeshi.gif" width="300" height="750">
+
  
- ## Event
+ ## Home - Rocket Listing Page:
  
- <img src="">
+ <img src="https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/home_page_1.png" width="300" height="750">
  
- ## Task
+ ## Specific Rocket Detail Screens:
  
- <img src="">
+ <img src="https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/rocket_detail_screen_1.png" width="300" height="750">
  
- ## Goal
- 
- <img src="">
- 
- ## Settings
- 
- <img src="">
- 
- ## Feature of Custom Calendar
- 
- <img src="">
+  <img src="https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/rocket_detail_screen_2.png" width="300" height="750">
+
+ <img src="https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/rocket_detail_screen_3.png" width="300" height="750">
+
+ <img src="https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/rocket_detail_screen_4.png" width="300" height="750">
+
+ <img src="https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/rocket_detail_screen_5.png" width="300" height="750">
 
 
 
