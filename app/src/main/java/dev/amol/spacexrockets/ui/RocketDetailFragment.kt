@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import dev.amol.spacexrockets.R
 import dev.amol.spacexrockets.databinding.FragmentRocketDetailBinding
 import dev.amol.spacexrockets.model.local.Rocket
 import dev.amol.spacexrockets.model.local.convertToRocketDataClass
@@ -43,6 +45,9 @@ class RocketDetailFragment : Fragment() {
     }
 
     private fun setUpUI(data: Rocket?) {
+        binding.backBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_rocketDetailFragment_to_rocketListFragment)
+        }
         requireActivity().actionBar?.title = data?.name ?: "Rocket Detail Screen"
         data?.let {
             setUpRecycler(it)

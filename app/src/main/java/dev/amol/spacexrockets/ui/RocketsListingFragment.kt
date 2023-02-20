@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import dev.amol.spacexrockets.R
@@ -63,8 +64,7 @@ class RocketsListingFragment : Fragment() {
         newsAdapter = RocketListAdapter(){
             it.let {
                 sharedViewModel.currentItemData = it
-                val fragmentTransaction = parentFragmentManager.beginTransaction()
-                fragmentTransaction.add(R.id.fragmentContainer,RocketDetailFragment()).addToBackStack("RocketDetailFragment").commit()
+                findNavController().navigate(R.id.action_rocketListFragment_to_rocketDetailFragment)
             }
         }
         binding.rvRecycler.apply {
