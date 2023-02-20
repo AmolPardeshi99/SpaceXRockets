@@ -1,4 +1,4 @@
-# Spacex 🤩🔥
+# :rocket: Spacex :rocket:
 
 Spacex is Android App for showing SpaceX Rockets & their details. The objective of the repository is to demonstrate the:
 
