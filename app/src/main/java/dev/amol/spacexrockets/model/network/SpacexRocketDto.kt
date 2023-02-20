@@ -83,10 +83,10 @@ data class CompositeFairing(
 data class Diameter(
 
     @field:SerializedName("feet")
-    val feet: Any,
+    val feet: Double,
 
     @field:SerializedName("meters")
-    val meters: Any
+    val meters: Double
 )
 
 data class PayloadWeightsItem(
@@ -230,10 +230,10 @@ data class Payloads(
 data class Height(
 
     @field:SerializedName("feet")
-    val feet: Any,
+    val feet: Double,
 
     @field:SerializedName("meters")
-    val meters: Any
+    val meters: Double
 )
 
 data class Mass(

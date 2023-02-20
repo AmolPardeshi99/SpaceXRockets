@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,9 +42,20 @@ class RocketsListingFragment : Fragment() {
     }
 
     private fun setObservers() {
-        sharedViewModel.getAllRocketsData()
-        sharedViewModel.allRocketsData.observe(viewLifecycleOwner) {
-            newsAdapter.updateList(it)
+        sharedViewModel.rockets.observe(viewLifecycleOwner) { rockets ->
+            newsAdapter.updateList(rockets)
+        }
+
+        sharedViewModel.isLoading.observe(viewLifecycleOwner){ isLoading ->
+            binding.swipeRefreshLayout.isRefreshing = isLoading
+        }
+
+        sharedViewModel.errorMessage.observe(viewLifecycleOwner){ errorMessage ->
+            Toast.makeText(activity, errorMessage, Toast.LENGTH_SHORT).show()
+        }
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            sharedViewModel.refreshRockets()
         }
     }
 
@@ -53,7 +65,6 @@ class RocketsListingFragment : Fragment() {
                 sharedViewModel.currentItemData = it
                 val fragmentTransaction = parentFragmentManager.beginTransaction()
                 fragmentTransaction.add(R.id.fragmentContainer,RocketDetailFragment()).addToBackStack("RocketDetailFragment").commit()
-
             }
         }
         binding.rvRecycler.apply {

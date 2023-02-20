@@ -10,7 +10,12 @@
     <string name="active_status">Active Status:</string>
     <string name="cost_per_launch">Cost per launch</string>
     <string name="success_rate_percent">Success Rate percent</string>
-    <string name="height_diameter">Height/Diameter:</string>
+    <string name="height_feet">Height(feet):</string>
+    <string name="diameter_feet">Height(feet):</string>
     <string name="description">Description</string>
+    <string name="sample_rocket_name">Falcon 9</string>
     <string name="sample_description">The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.</string>
+    <string name="wikipedia_link">Wikipedia Link</string>
+    <string name="sample_wikipedia_link">https://en.wikipedia.org/wiki/Falcon_1</string>
+    <string name="images">Images:</string>
 </resources>

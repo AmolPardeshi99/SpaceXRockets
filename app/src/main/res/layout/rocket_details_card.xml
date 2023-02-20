@@ -39,7 +39,7 @@
             android:layout_marginEnd="@dimen/marginSmall"
             android:ellipsize="end"
             android:maxLines="3"
-            android:textColor="@color/colorOnPrimaryHighEmp"
+            android:textColor="@color/colorOnPrimaryMediumEmp"
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintBottom_toTopOf="@id/titleCostPerLaunch"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +70,7 @@
             android:layout_marginEnd="@dimen/marginSmall"
             android:ellipsize="end"
             android:maxLines="3"
-            android:textColor="@color/colorOnPrimaryHighEmp"
+            android:textColor="@color/colorOnPrimaryMediumEmp"
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintBottom_toTopOf="@id/titleSuccessRatePercent"
             app:layout_constraintStart_toStartOf="parent"
@@ -101,14 +101,14 @@
             android:layout_marginEnd="@dimen/marginSmall"
             android:ellipsize="end"
             android:maxLines="3"
-            android:textColor="@color/colorOnPrimaryHighEmp"
+            android:textColor="@color/colorOnPrimaryMediumEmp"
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleSuccessRatePercent"
             tools:text="89%" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/titleHeightDiameter"
+            android:id="@+id/titleHeight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/marginMedium"
@@ -116,26 +116,57 @@
             android:layout_marginEnd="@dimen/marginLarge"
             android:ellipsize="end"
             android:maxLines="3"
-            android:text="@string/height_diameter"
+            android:text="@string/height_feet"
             android:textColor="@color/colorOnPrimaryHighEmp"
             app:fontFamily="@font/space_mono_bold"
-            app:layout_constraintBottom_toTopOf="@id/tvHeightDiameter"
+            app:layout_constraintBottom_toTopOf="@id/tvHeight"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvSuccessRatePercent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvHeightDiameter"
+            android:id="@+id/tvHeight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/marginLarge"
             android:layout_marginEnd="@dimen/marginSmall"
             android:ellipsize="end"
             android:maxLines="3"
+            android:textColor="@color/colorOnPrimaryMediumEmp"
+            app:fontFamily="@font/space_mono_regular"
+            app:layout_constraintBottom_toTopOf="@id/titleDiameter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleHeight"
+            tools:text="1269/3366 ft" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleDiameter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginMedium"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/diameter_feet"
             android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_bold"
+            app:layout_constraintBottom_toTopOf="@id/tvDiameter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeight" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDiameter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginLarge"
+            android:layout_marginEnd="@dimen/marginSmall"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/colorOnPrimaryMediumEmp"
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintBottom_toTopOf="@id/titleDescription"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleHeightDiameter"
+            app:layout_constraintTop_toBottomOf="@id/titleDiameter"
             tools:text="1269/3366 ft" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -152,7 +183,7 @@
             app:fontFamily="@font/space_mono_bold"
             app:layout_constraintBottom_toTopOf="@id/tvDescription"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvHeightDiameter" />
+            app:layout_constraintTop_toBottomOf="@id/tvDiameter" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDescription"
@@ -161,14 +192,50 @@
             android:layout_marginStart="@dimen/marginLarge"
             android:layout_marginEnd="@dimen/marginSmall"
             android:ellipsize="end"
+            android:maxLines="9"
+            android:textColor="@color/colorOnPrimaryMediumEmp"
+            app:fontFamily="@font/space_mono_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/titleWikipediaLink"
+            app:layout_constraintTop_toBottomOf="@id/titleDescription"
+            tools:text="@string/sample_description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleWikipediaLink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginMedium"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:layout_marginEnd="@dimen/marginLarge"
+            android:ellipsize="end"
             android:maxLines="3"
+            android:text="@string/wikipedia_link"
+            android:textColor="@color/colorOnPrimaryHighEmp"
+            app:fontFamily="@font/space_mono_bold"
+            app:layout_constraintBottom_toTopOf="@id/tvWikipediaLink"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWikipediaLink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginLarge"
+            android:layout_marginEnd="@dimen/marginSmall"
+            android:layout_marginBottom="@dimen/marginLarge"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:autoLink="web"
+            android:inputType="textUri"
+            android:textColorLink="@color/colorOnPrimaryMediumEmp"
             android:textColor="@color/colorOnPrimaryHighEmp"
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleDescription"
-            tools:text="@string/sample_description" />
+            app:layout_constraintTop_toBottomOf="@id/titleWikipediaLink"
+            tools:text="@string/sample_wikipedia_link" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

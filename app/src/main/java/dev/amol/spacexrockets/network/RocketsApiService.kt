@@ -2,7 +2,6 @@ package dev.amol.spacexrockets.network
 
 import dev.amol.spacexrockets.model.network.SpacexRocketDto
 import dev.amol.spacexrockets.utils.Constants.ENDPOINT_ROCKETS_DATA
-import dev.amol.spacexrockets.utils.Resource
 import retrofit2.Response
 import retrofit2.http.GET
 

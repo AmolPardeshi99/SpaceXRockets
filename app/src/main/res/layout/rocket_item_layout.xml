@@ -28,7 +28,7 @@
             android:textColor="@color/colorOnPrimaryHighEmp"
             app:fontFamily="@font/space_mono_bold"
             app:layout_constraintBottom_toTopOf="@id/tvRocketName"
-            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImgLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
             android:textColor="@color/colorOnPrimaryHighEmp"
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintBottom_toTopOf="@id/titleRocketCountry"
-            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImgLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleRocketName"
             tools:text="Falcon 9" />
@@ -61,7 +61,7 @@
             android:textColor="@color/colorOnPrimaryHighEmp"
             app:fontFamily="@font/space_mono_bold"
             app:layout_constraintBottom_toTopOf="@id/tvRocketCountry"
-            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImgLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvRocketName" />
 
@@ -76,7 +76,7 @@
             android:textColor="@color/colorOnPrimaryHighEmp"
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintBottom_toTopOf="@id/titleRocketEngineCount"
-            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImgLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleRocketCountry"
             tools:text="USA" />
@@ -95,7 +95,7 @@
             app:fontFamily="@font/space_mono_bold"
             app:layout_constraintBottom_toTopOf="@id/tvRocketEngineCount"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImgLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvRocketCountry" />
 
@@ -112,24 +112,22 @@
             app:fontFamily="@font/space_mono_regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImg"
+            app:layout_constraintEnd_toStartOf="@id/ivRocketFlickerImgLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleRocketEngineCount"
             tools:text="10" />
 
-        <ImageView
-            android:id="@+id/ivRocketFlickerImg"
-            android:layout_width="150dp"
+        <include
+            android:id="@+id/ivRocketFlickerImgLayout"
+            layout="@layout/rocket_image_card"
+            android:layout_width="160dp"
             android:layout_height="0dp"
-            android:layout_marginVertical="@dimen/marginSmall"
-            android:layout_marginEnd="@dimen/marginMedium"
-            android:background="@drawable/rounded_corner"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvRocketCountry"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

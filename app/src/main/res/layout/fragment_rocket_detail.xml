@@ -50,6 +50,41 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleRocketNames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginMedium"
+                android:layout_marginTop="@dimen/marginMedium"
+                android:layout_marginEnd="@dimen/marginLarge"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Falcon -9"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryVariant"
+                app:fontFamily="@font/space_mono_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/titleImages"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleImages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginMedium"
+                android:layout_marginTop="@dimen/marginMedium"
+                android:layout_marginEnd="@dimen/marginLarge"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@string/images"
+                android:textColor="@color/colorSecondary"
+                app:fontFamily="@font/space_mono_bold"
+                app:layout_constraintBottom_toTopOf="@id/rvFlickerImages"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleRocketNames" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvFlickerImages"
                 android:layout_width="match_parent"
@@ -59,7 +94,7 @@
                 app:layout_constraintBottom_toTopOf="@id/rocketDetailsCardLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleImages"
                 tools:itemCount="5"
                 tools:listitem="@layout/flicker_images_item_layout" />
 
@@ -69,23 +104,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/marginMedium"
-                app:layout_constraintBottom_toTopOf="@id/wikipediaLinkPreviewCard"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rvFlickerImages" />
-
-            <include
-                android:id="@+id/wikipediaLinkPreviewCard"
-                layout="@layout/wikipedia_link_preview"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="@dimen/marginMedium"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rocketDetailsCardLayout" />
+                app:layout_constraintTop_toBottomOf="@id/rvFlickerImages" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

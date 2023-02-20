@@ -1,15 +1,16 @@
 package dev.amol.spacexrockets.ui
 
+import android.graphics.Paint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import dev.amol.spacexrockets.databinding.FragmentRocketDetailBinding
-import dev.amol.spacexrockets.model.network.SpacexRocketDto
+import dev.amol.spacexrockets.model.local.Rocket
+import dev.amol.spacexrockets.model.local.convertToRocketDataClass
 import dev.amol.spacexrockets.viewmodel.RocketsViewModel
 
 @AndroidEntryPoint
@@ -27,7 +28,7 @@ class RocketDetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentRocketDetailBinding.inflate(inflater, container, false)
         return binding.root
@@ -35,38 +36,35 @@ class RocketDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().actionBar?.title = "Rocket Detail Screen"
-        setUpUI()
+
+        val data: Rocket? = sharedViewModel.currentItemData
+        setUpUI(data)
         setObservers()
     }
 
-    private fun setUpUI() {
-        val data : SpacexRocketDto? = sharedViewModel.currentItemData
+    private fun setUpUI(data: Rocket?) {
+        requireActivity().actionBar?.title = data?.name ?: "Rocket Detail Screen"
         data?.let {
-            requireActivity().actionBar?.title = data.name
             setUpRecycler(it)
             setUpRocketText(it)
-            setUpLinkPreview(it)
         }
     }
 
-    private fun setUpLinkPreview(spacexRocketDto: SpacexRocketDto) {
-        binding.wikipediaLinkPreviewCard.apply {
-            Glide.with(ivLinkPreview).load(spacexRocketDto.wikipedia).into(ivLinkPreview)
-        }
-    }
-
-    private fun setUpRocketText(spacexRocketDto: SpacexRocketDto) {
+    private fun setUpRocketText(spacexRocketDto: Rocket) {
         binding.rocketDetailsCardLayout.apply {
-            tvActiveStatus.text = if(spacexRocketDto.active) "Active" else "Inactive"
+            binding.titleRocketNames.text = spacexRocketDto.name
+            tvActiveStatus.text = if (spacexRocketDto.activeStatus) "Active" else "Inactive"
             tvCostPerLaunch.text = spacexRocketDto.costPerLaunch.toString()
-            tvSuccessRatePercent.text =  "${spacexRocketDto.successRatePct} %"
-            tvHeightDiameter.text = spacexRocketDto.height.toString()+"/ "+spacexRocketDto.diameter
+            tvSuccessRatePercent.text = "${spacexRocketDto.successRatePct} %"
+            tvHeight.text = spacexRocketDto.height.toString()
+            tvDiameter.text = spacexRocketDto.diameter.toString()
             tvDescription.text = spacexRocketDto.description
+            tvWikipediaLink.text = spacexRocketDto.wikipedia
+            tvWikipediaLink.paintFlags = Paint.UNDERLINE_TEXT_FLAG
         }
     }
 
-    private fun setUpRecycler(spacexRocketDto: SpacexRocketDto) {
+    private fun setUpRecycler(spacexRocketDto: Rocket) {
         flickerImagesAdapter = FlickerImagesAdapter()
         flickerImagesAdapter.updateUI(spacexRocketDto.flickrImages)
         binding.rvFlickerImages.apply {
@@ -76,13 +74,9 @@ class RocketDetailFragment : Fragment() {
 
     private fun setObservers() {
         sharedViewModel.getSpecificRocketData()
-        sharedViewModel.specificRocketData.observe(viewLifecycleOwner){
-            flickerImagesAdapter.updateUI(it.flickrImages)
+        sharedViewModel.specificRocketData.observe(viewLifecycleOwner) {
+            setUpUI(convertToRocketDataClass(it))
         }
-    }
-
-    private fun setUI(spacexRocketDto: SpacexRocketDto) {
-
     }
 
 }
