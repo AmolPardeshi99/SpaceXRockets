@@ -67,27 +67,27 @@ Open Android Studio. Go to File > New > Project From Version Control. Copy the l
 
 # Let's See
  
- <img src="https://github.com/Kingbond470/Android-Practice/blob/main/Notify%20Assest/home.png">
+ <img src="">
  
  ## Event
  
- <img src="https://github.com/Kingbond470/Android-Practice/blob/main/Notify%20Assest/event.png">
+ <img src="">
  
  ## Task
  
- <img src="https://github.com/Kingbond470/Android-Practice/blob/main/Notify%20Assest/task.png">
+ <img src="">
  
  ## Goal
  
- <img src="https://github.com/Kingbond470/Android-Practice/blob/main/Notify%20Assest/goal.png">
+ <img src="">
  
  ## Settings
  
- <img src="https://github.com/Kingbond470/Android-Practice/blob/main/Notify%20Assest/settings.png">
+ <img src="">
  
  ## Feature of Custom Calendar
  
- <img src="https://github.com/Kingbond470/Android-Practice/blob/main/Notify%20Assest/calendar.png">
+ <img src="">
 
 
 
