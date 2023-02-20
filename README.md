@@ -1,7 +1,6 @@
 # Spacex 🤩🔥
 
-Android App for showing SpaceX Rockets & their details. The objective of the assignment is to demonstrate the coding style and approach on
-following important aspects:
+Spacex is Android App for showing SpaceX Rockets & their details. The objective of the repository is to demonstrate the:
 
 * MVVM Android App architecture 
 * Offline Supoort Using Room DataBase
@@ -24,6 +23,7 @@ https://drive.google.com/file/d/1ILzpTQecNiWxuGMnJF1Khfqva_t88hWp/view?usp=share
 * Room DataBase
 * Coroutines
 * Navigation graph
+* [Spacex API]("https://github.com/r-spacex/SpaceX-API")
 
 # Tech Stack ✨
 
