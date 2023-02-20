@@ -67,7 +67,7 @@ Open Android Studio. Go to File > New > Project From Version Control. Copy the l
 
 # Let's See
  
- <img src="">
+ [GIF Demo]("https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/spacex_demo_amol_pardeshi.gif")
  
  ## Event
  
