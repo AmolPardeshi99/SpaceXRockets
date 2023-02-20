@@ -7,7 +7,7 @@ Spacex is Android App for showing SpaceX Rockets & their details. The objective 
 * UI Implementation using Material Components
 * Standard Coding rules  
 * Coroutines and Livedata
-
+* Dependency injection using Hilt
 
 # Links for Demo
 
@@ -20,6 +20,7 @@ https://drive.google.com/file/d/1ILzpTQecNiWxuGMnJF1Khfqva_t88hWp/view?usp=share
 * Recycler View
 * Retrofit Library
 * MVVM
+* Dagger-Hilt
 * Room DataBase
 * Coroutines
 * Navigation graph
@@ -67,7 +68,7 @@ Open Android Studio. Go to File > New > Project From Version Control. Copy the l
 
 # Let's See
  
- <img src="">
+ "https://github.com/AmolPardeshi99/SpaceXRockets/blob/master/Assets/spacex_demo_amol_pardeshi.gif"
  
  ## Event
  
