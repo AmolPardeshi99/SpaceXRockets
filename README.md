@@ -3,11 +3,11 @@
 Android App for showing SpaceX Rockets & their details. The objective of the assignment is to demonstrate the coding style and approach on
 following important aspects:
 
-. MVVM Android App architecture 
-. Offline Supoort Using Room DataBase
-. UI Implementation using Material Components
-. Standard Coding rules  
-. Coroutines and Livedata
+* MVVM Android App architecture 
+* Offline Supoort Using Room DataBase
+* UI Implementation using Material Components
+* Standard Coding rules  
+* Coroutines and Livedata
 
 
 # Links for Demo
