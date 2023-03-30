@@ -21,7 +21,7 @@ https://drive.google.com/file/d/1ILzpTQecNiWxuGMnJF1Khfqva_t88hWp/view?usp=share
 * Retrofit Library
 * MVVM
 * Dagger-Hilt
-* Room DataBase
+* Room DB
 * Coroutines
 * Navigation graph
 * [Spacex API]("https://github.com/r-spacex/SpaceX-API")
